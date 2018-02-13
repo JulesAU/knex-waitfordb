@@ -14,7 +14,7 @@ function wait () {
   const knex = require('knex')(
     require(
       require('path').join(process.cwd(), knexfile)
-    )
+    )[process.env.NODE_ENV]
   )
   knex
     .raw('SELECT 1 + 1')
