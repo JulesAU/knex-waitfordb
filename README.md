@@ -28,6 +28,15 @@ but you need to make sure the database is up to run this, right? So do:
 and `npm install --save-dev knex-waitfordb`. Now `npm run migrate` waits
 for your database to be up. No hassle!
 
+## You can also use it directly in your code:
+
+	const waitForDB = require("@motowhere/knex-waitfordb")
+	waitForDB().then(() => {
+	  // Do cool database stuff in here
+	  knex.migrate.latest()
+	})
+
+
 ## Err...
 
 It's really useful in Docker containers. You'll see.
